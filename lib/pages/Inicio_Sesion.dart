@@ -1,9 +1,7 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:kioskito_gerente/common/paleta.dart';
 import 'package:kioskito_gerente/pages/opciones.dart';
-import 'package:kioskito_gerente/routes/routes.dart';
+
 import 'package:kioskito_gerente/structure/botons.dart';
 import 'package:kioskito_gerente/structure/cont_txt.dart';
 import 'package:kioskito_gerente/structure/textField.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kioskito_gerente/pages/Inicio_Sesion.dart';
-import 'package:kioskito_gerente/pages/opciones.dart';
+import 'package:kioskito_gerente/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Opciones(),
+      home: InicioSesion(),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
