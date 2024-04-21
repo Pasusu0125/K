@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:kioskito_gerente/common/style.dart';
 
 class ContenedorTexto extends StatelessWidget {
   final double w;
@@ -8,26 +7,28 @@ class ContenedorTexto extends StatelessWidget {
   final String text;
   final double maxF;
   final double minF;
+  final style;
   const ContenedorTexto(
       {super.key,
       required this.w,
       required this.h,
       required this.text,
       required this.maxF,
-      required this.minF});
+      required this.minF,
+      this.style});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: MediaQuery.of(context).size.width * w,
-      height: MediaQuery.of(context).size.height * h,
+      width: w,
+      height: h,
       child: AutoSizeText(
         text,
         maxLines: 1,
         maxFontSize: maxF,
         minFontSize: minF,
-        style: temaApp.textTheme.titleLarge,
+        style: style,
       ),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kioskito_gerente/common/paleta.dart';
-import 'package:kioskito_gerente/pages/opciones.dart';
-
+import 'package:kioskito_gerente/common/style.dart';
 import 'package:kioskito_gerente/structure/botons.dart';
 import 'package:kioskito_gerente/structure/cont_txt.dart';
 import 'package:kioskito_gerente/structure/textField.dart';
@@ -43,8 +42,13 @@ class _InicioSesionState extends State<InicioSesion> {
                       ),
                     ),
                   ),
-                  const ContenedorTexto(
-                      w: 0.26, h: 0.2, text: 'Kioskito', maxF: 140, minF: 20)
+                  ContenedorTexto(
+                      style: temaApp.textTheme.titleLarge,
+                      w: 0.26,
+                      h: 0.2,
+                      text: 'Kioskito',
+                      maxF: 140,
+                      minF: 20)
                 ],
               ),
               const CampoTexto(
@@ -63,6 +67,9 @@ class _InicioSesionState extends State<InicioSesion> {
               Btn1(
                 w: MediaQuery.of(context).size.width * 0.12,
                 h: MediaQuery.of(context).size.height * 0.07,
+                op: () {
+                  Navigator.pushNamed(context, '/opciones');
+                },
                 child: const TextoBotones(text: 'Iniciar Sesión'),
               ),
             ],

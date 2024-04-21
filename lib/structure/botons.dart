@@ -23,9 +23,7 @@ class Btn1 extends StatelessWidget {
       height: h,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       color: btn1,
-      onPressed: () {
-        op;
-      },
+      onPressed: op,
       child: child,
     );
   }
@@ -55,6 +53,26 @@ class TextoBotones extends StatelessWidget {
       text,
       style: temaApp.textTheme.displaySmall,
       textAlign: TextAlign.center,
+    );
+  }
+}
+
+class ContenedorBtn extends StatelessWidget {
+  final op;
+  final double h;
+  final double w;
+  const ContenedorBtn({super.key, this.op, required this.h, required this.w});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      onPressed: op,
+      height: MediaQuery.of(context).size.height * h,
+      minWidth: MediaQuery.of(context).size.width * w,
+      color: btn2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
     );
   }
 }
