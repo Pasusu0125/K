@@ -16,42 +16,57 @@ class _OpcionesState extends State<Opciones> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: fondo,
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Center(
-          child: Column(
-            children: [
-              ContenedorTexto(
-                  w: MediaQuery.of(context).size.width * 0.4,
-                  h: MediaQuery.of(context).size.height * 0.1,
-                  text: 'BIENVENIDO',
-                  style: temaApp.textTheme.titleMedium,
-                  maxF: 120,
-                  minF: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ContenedorBtn(
-                    h: 0.3,
-                    w: 0.2,
-                    op: () {
-                      Navigator.pushNamed(context, '/inicioProductos');
-                    },
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.05,
-                  ),
-                  ContenedorBtn(
-                    h: 0.3,
-                    w: 0.2,
-                    op: () {
-                      Navigator.pushNamed(context, '/inicioPedidos');
-                    },
-                  )
-                ],
-              ),
-            ],
+      body: Padding(
+        padding:
+            EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.15),
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Center(
+            child: Column(
+              children: [
+                ContenedorTexto(
+                    maxL: 1,
+                    posicionText: Alignment.center,
+                    w: MediaQuery.of(context).size.width * 0.5,
+                    h: MediaQuery.of(context).size.height * 0.12,
+                    text: 'BIENVENIDO',
+                    style: temaApp.textTheme.titleMedium,
+                    maxF: 140,
+                    minF: 20),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ContenedorBtn(
+                      h: 0.3,
+                      w: 0.2,
+                      rutaImg:
+                          'https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxmb29kfGVufDB8fHx8MTcxMjMyMzg0Nnww&ixlib=rb-4.0.3&q=80&w=1080 ',
+                      title: 'Productos',
+                      op: () {
+                        Navigator.pushNamed(context, '/inicioProductos');
+                      },
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.05,
+                    ),
+                    ContenedorBtn(
+                      h: 0.3,
+                      w: 0.2,
+                      rutaImg:
+                          'https://images.unsplash.com/photo-1588675646184-f5b0b0b0b2de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxvcmRlcnMlN0R8ZW58MHx8fHwxNzEyMzU3MzUzfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                      title: 'Pedidos',
+                      op: () {
+                        Navigator.pushNamed(context, '/inicioPedidos');
+                      },
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

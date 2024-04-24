@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-
+import 'package:adaptive_scrollbar/adaptive_scrollbar.dart';
 import "package:kioskito_gerente/common/paleta.dart";
 import "package:kioskito_gerente/common/style.dart";
 
@@ -18,27 +18,31 @@ class TableWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scrollController = ScrollController();
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.25,
-      width: MediaQuery.of(context).size.width * 0.90,
-      child: Scrollbar(
-        thumbVisibility: true,
-        thickness: 10,
-        controller: scrollController,
-        scrollbarOrientation: ScrollbarOrientation.bottom,
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          controller: scrollController,
-          children: [
-            DataTable(
+    final verticalScrollController = ScrollController();
+    final horizontalScrollController = ScrollController();
+    return AdaptiveScrollbar(
+      sliderDefaultColor: Colors.grey.withOpacity(0.7),
+      sliderActiveColor: Colors.grey,
+      controller: verticalScrollController,
+      child: AdaptiveScrollbar(
+        controller: horizontalScrollController,
+        position: ScrollbarPosition.bottom,
+        sliderDefaultColor: Colors.grey.withOpacity(0.7),
+        sliderActiveColor: Colors.grey,
+        child: SingleChildScrollView(
+          controller: verticalScrollController,
+          scrollDirection: Axis.vertical,
+          child: SingleChildScrollView(
+            controller: horizontalScrollController,
+            scrollDirection: Axis.horizontal,
+            child: DataTable(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    stops: const [0.32, 0.3],
-                    colors: [btn2, blanco]),
+                    stops: const [0.5, 0.2],
+                    colors: [headingTabla, blanco]),
               ),
               border: TableBorder(
                 horizontalInside: const BorderSide(color: Colors.white),
@@ -51,7 +55,7 @@ class TableWidget extends StatelessWidget {
                   .toList(),
               rows: rows,
             ),
-          ],
+          ),
         ),
       ),
     );

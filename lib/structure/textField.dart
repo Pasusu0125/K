@@ -4,18 +4,28 @@ import 'package:kioskito_gerente/common/paleta.dart';
 class CampoTexto extends StatelessWidget {
   final String text;
   final Widget icon;
-  const CampoTexto({super.key, required this.text, required this.icon});
+  final double w;
+  final double h;
+  final TextAlignVertical direccionText;
+  const CampoTexto(
+      {super.key,
+      required this.text,
+      required this.icon,
+      required this.w,
+      required this.h,
+      required this.direccionText});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      textAlignVertical: direccionText,
       decoration: InputDecoration(
         hintText: text,
-        hintStyle: const TextStyle(fontFamily: 'Acme'),
+        hintStyle: const TextStyle(
+          fontFamily: 'Acme',
+        ),
         suffixIcon: icon,
-        constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(context).size.height * 0.1,
-            maxWidth: MediaQuery.of(context).size.width * 0.4),
+        constraints: BoxConstraints(maxHeight: h, maxWidth: w),
         filled: true,
         fillColor: blanco,
         enabledBorder: OutlineInputBorder(
@@ -53,7 +63,9 @@ class _CampoTextoPasswordState extends State<CampoTextoPassword> {
       obscureText: passwordVisible,
       decoration: InputDecoration(
         hintText: 'Contraseña',
-        hintStyle: const TextStyle(fontFamily: 'Acme'),
+        hintStyle: const TextStyle(
+          fontFamily: 'Acme',
+        ),
         suffixIcon: LayoutBuilder(
           builder: (context, constraints) {
             final textField = constraints;
@@ -92,7 +104,8 @@ class _CampoTextoPasswordState extends State<CampoTextoPassword> {
 //Icono TexField
 class IconoTextField extends StatelessWidget {
   final IconData icono;
-  const IconoTextField({super.key, required this.icono});
+  final Color color;
+  const IconoTextField({super.key, required this.icono, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +116,7 @@ class IconoTextField extends StatelessWidget {
           width: textField.maxWidth * 0.08,
           child: Icon(
             icono,
-            color: colorIcono1,
+            color: color,
             size: textField.maxHeight * 0.45,
           ),
         );

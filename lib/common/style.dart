@@ -10,7 +10,7 @@ final temaApp = ThemeData(
     ),
     titleMedium: TextStyle(
         color: titulo1,
-        fontSize: 120,
+        fontSize: 200,
         fontFamily: 'Poppins',
         fontWeight: FontWeight.w800),
     //Titulo txt AlertDialog

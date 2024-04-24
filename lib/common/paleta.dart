@@ -22,3 +22,5 @@ Color btnIconoRechazar = const Color(0xFFAD2424);
 //Color btn1
 Color btn1 = const Color(0xFF804000);
 Color btn2 = const Color(0xB79E6730);
+//Colorheading tabla
+Color headingTabla = const Color(0xFF9E6730);

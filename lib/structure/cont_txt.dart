@@ -7,6 +7,8 @@ class ContenedorTexto extends StatelessWidget {
   final String text;
   final double maxF;
   final double minF;
+  final int maxL;
+  final Alignment posicionText;
   final style;
   const ContenedorTexto(
       {super.key,
@@ -15,19 +17,61 @@ class ContenedorTexto extends StatelessWidget {
       required this.text,
       required this.maxF,
       required this.minF,
-      this.style});
+      this.style,
+      required this.posicionText,
+      required this.maxL});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
+      color: const Color.fromARGB(0, 255, 193, 7),
+      alignment: posicionText,
       width: w,
       height: h,
       child: AutoSizeText(
         text,
-        maxLines: 1,
+        maxLines: maxL,
         maxFontSize: maxF,
         minFontSize: minF,
+        style: style,
+      ),
+    );
+  }
+}
+
+class ContenedorTextoGrande extends StatelessWidget {
+  final double w;
+  final double h;
+  final String text;
+  final double maxF;
+  final double minF;
+  final int maxL;
+  final Alignment posicionText;
+  final style;
+  const ContenedorTextoGrande(
+      {super.key,
+      required this.w,
+      required this.h,
+      required this.text,
+      required this.maxF,
+      required this.minF,
+      this.style,
+      required this.posicionText,
+      required this.maxL});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color.fromARGB(255, 255, 193, 7),
+      alignment: posicionText,
+      width: w,
+      height: h,
+      child: AutoSizeText(
+        text,
+        maxLines: maxL,
+        maxFontSize: maxF,
+        minFontSize: minF,
+        textAlign: TextAlign.justify,
         style: style,
       ),
     );

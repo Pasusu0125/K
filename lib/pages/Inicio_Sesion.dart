@@ -43,17 +43,23 @@ class _InicioSesionState extends State<InicioSesion> {
                     ),
                   ),
                   ContenedorTexto(
+                      maxL: 1,
+                      posicionText: Alignment.center,
                       style: temaApp.textTheme.titleLarge,
-                      w: 0.26,
-                      h: 0.2,
+                      w: MediaQuery.of(context).size.width * 0.26,
+                      h: MediaQuery.of(context).size.height * 0.2,
                       text: 'Kioskito',
                       maxF: 140,
                       minF: 20)
                 ],
               ),
-              const CampoTexto(
+              CampoTexto(
+                direccionText: TextAlignVertical.center,
+                w: MediaQuery.of(context).size.width * 0.4,
+                h: MediaQuery.of(context).size.height * 0.1,
                 text: 'Usuario',
                 icon: IconoTextField(
+                  color: colorIcono1,
                   icono: Icons.person,
                 ),
               ),
