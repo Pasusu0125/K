@@ -202,7 +202,36 @@ class BtnIconoVerComprobante extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: op,
+      onPressed: () {
+        showDialog(
+            context: context,
+            builder: (context) => AlertDialogMessage(
+                w: 0.3,
+                h: 0.7,
+                title: ContenedorTexto(
+                    maxL: 1,
+                    w: MediaQuery.of(context).size.width * 0.2,
+                    h: MediaQuery.of(context).size.height * 0.08,
+                    text: 'Comprobante de Pago',
+                    style: temaApp.textTheme.titleMedium,
+                    maxF: 42,
+                    minF: 8,
+                    posicionText: Alignment.center),
+                color: blanco,
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    var tamanioAlert = constraints;
+                    return FittedBox(
+                      fit: BoxFit.contain,
+                      child: Container(
+                        color: Colors.amber,
+                        width: tamanioAlert.maxWidth * 0.7,
+                        height: tamanioAlert.maxHeight * 0.9,
+                      ),
+                    );
+                  },
+                )));
+      },
       icon: Icon(
         Icons.remove_red_eye_rounded,
         color: btnIconoInfo,

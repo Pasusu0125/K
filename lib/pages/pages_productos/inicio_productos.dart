@@ -73,7 +73,7 @@ class _InicioProductosState extends State<InicioProductos> {
                       );
                     },
                     child: const TextoBotones(text: 'Agregar'),
-                  )
+                  ),
                 ],
               ),
               Padding(
