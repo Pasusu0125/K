@@ -159,7 +159,7 @@ class AlertDialogAgregar extends StatelessWidget {
                                     title: ContenedorTexto(
                                         maxL: 1,
                                         w: MediaQuery.of(context).size.width *
-                                            0.3,
+                                            0.2,
                                         h: MediaQuery.of(context).size.height *
                                             0.08,
                                         text: 'Aviso',
@@ -167,8 +167,8 @@ class AlertDialogAgregar extends StatelessWidget {
                                         maxF: 42,
                                         minF: 8,
                                         posicionText: Alignment.center),
-                                    w: 0.2,
-                                    h: 0.3,
+                                    w: 0.1,
+                                    h: 0.15,
                                     child: LayoutBuilder(
                                       builder: (context, constraints) {
                                         var tamanioAlert = constraints;

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kioskito_gerente/common/paleta.dart';
 import 'package:kioskito_gerente/common/style.dart';
+import 'package:kioskito_gerente/structure/botons.dart';
 import 'package:kioskito_gerente/structure/cont_txt.dart';
 import 'package:kioskito_gerente/structure/objects.dart';
 import 'package:kioskito_gerente/structure/tablas.dart';
@@ -73,7 +74,10 @@ class _PedidosListosState extends State<PedidosListos> {
                           Container(
                             alignment: Alignment.center,
                             child: BtnIconoInfo(
-                              op: () {},
+                              op: () {
+                                Navigator.pushNamed(
+                                    context, '/informacionPedidos');
+                              },
                             ),
                           ),
                         ),
@@ -82,6 +86,24 @@ class _PedidosListosState extends State<PedidosListos> {
                   ],
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.25,
+                    right: MediaQuery.of(context).size.width * 0.1),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Btn1(
+                      w: MediaQuery.of(context).size.width * 0.1,
+                      h: MediaQuery.of(context).size.height * 0.05,
+                      child: const TextoBotones(text: 'Volver'),
+                      op: () {
+                        Navigator.pushNamed(context, '/inicioPedidos');
+                      },
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),

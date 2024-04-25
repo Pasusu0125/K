@@ -55,15 +55,15 @@ class BtnIconoEliminar extends StatelessWidget {
               color: blanco,
               title: ContenedorTexto(
                   maxL: 1,
-                  w: MediaQuery.of(context).size.width * 0.3,
+                  w: MediaQuery.of(context).size.width * 0.1,
                   h: MediaQuery.of(context).size.height * 0.08,
                   text: 'Aviso',
                   style: temaApp.textTheme.titleMedium,
                   maxF: 42,
                   minF: 8,
                   posicionText: Alignment.center),
-              w: 0.2,
-              h: 0.15,
+              w: 0.1,
+              h: 0.1,
               child: LayoutBuilder(
                 builder: (context, constraints) {
                   var tamanioAlert = constraints;

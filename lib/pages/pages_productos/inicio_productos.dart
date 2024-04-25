@@ -155,9 +155,7 @@ class _InicioProductosState extends State<InicioProductos> {
                           DataCell(
                             Container(
                               alignment: Alignment.center,
-                              child: BtnIconoEditar(
-                                op: () {},
-                              ),
+                              child: const BtnIconoEditar(),
                             ),
                           ),
                           DataCell(
@@ -676,7 +674,8 @@ class _InicioProductosState extends State<InicioProductos> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.width * 0.05),
+                    top: MediaQuery.of(context).size.height * 0.2,
+                    right: MediaQuery.of(context).size.width * 0.1),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [

@@ -131,6 +131,24 @@ class _InicioPedidosState extends State<InicioPedidos> {
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.2,
+                  right: MediaQuery.of(context).size.width * 0.1),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Btn1(
+                    w: MediaQuery.of(context).size.width * 0.1,
+                    h: MediaQuery.of(context).size.height * 0.05,
+                    child: const TextoBotones(text: 'Volver'),
+                    op: () {
+                      Navigator.pushNamed(context, '/opciones');
+                    },
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
