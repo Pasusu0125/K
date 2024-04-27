@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kioskito_gerente/common/paleta.dart';
 import 'package:kioskito_gerente/common/style.dart';
-import 'package:kioskito_gerente/structure/alertDialogAgregar.dart';
+import 'package:kioskito_gerente/structure/alert_dialog_agregar.dart';
 import 'package:kioskito_gerente/structure/botons.dart';
 import 'package:kioskito_gerente/structure/cont_txt.dart';
 import 'package:kioskito_gerente/structure/objects.dart';

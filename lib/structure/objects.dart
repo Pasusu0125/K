@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kioskito_gerente/common/paleta.dart';
 import 'package:kioskito_gerente/common/style.dart';
-import 'package:kioskito_gerente/structure/alertDialogEditar.dart';
-import 'package:kioskito_gerente/structure/alertDialogMessage.dart';
+import 'package:kioskito_gerente/structure/alert_dialog_editar.dart';
+import 'package:kioskito_gerente/structure/alert_dialog_message.dart';
 import 'package:kioskito_gerente/structure/botons.dart';
 import 'package:kioskito_gerente/structure/cont_txt.dart';
 

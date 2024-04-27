@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kioskito_gerente/common/paleta.dart';
 import 'package:kioskito_gerente/common/style.dart';
-import 'package:kioskito_gerente/structure/alertDialogMessage.dart';
+import 'package:kioskito_gerente/structure/alert_dialog_message.dart';
 import 'package:kioskito_gerente/structure/botons.dart';
 import 'package:kioskito_gerente/structure/cont_txt.dart';
 import 'package:kioskito_gerente/structure/textField.dart';
 
-class AlertDialogAgregar extends StatelessWidget {
-  const AlertDialogAgregar({super.key});
+class AlertDialogEditar extends StatelessWidget {
+  const AlertDialogEditar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class AlertDialogAgregar extends StatelessWidget {
           posicionText: Alignment.center,
           w: MediaQuery.of(context).size.width * 0.4,
           h: MediaQuery.of(context).size.height * 0.07,
-          text: 'Crear Producto',
+          text: 'Editar Producto',
           style: temaApp.textTheme.titleMedium,
           maxF: 80,
           minF: 12),
@@ -167,8 +167,8 @@ class AlertDialogAgregar extends StatelessWidget {
                                         maxF: 42,
                                         minF: 8,
                                         posicionText: Alignment.center),
-                                    w: 0.1,
-                                    h: 0.15,
+                                    w: 0.2,
+                                    h: 0.2,
                                     child: LayoutBuilder(
                                       builder: (context, constraints) {
                                         var tamanioAlert = constraints;
@@ -193,7 +193,7 @@ class AlertDialogAgregar extends StatelessWidget {
                                                   h: tamanioAlert.maxHeight *
                                                       0.5,
                                                   text:
-                                                      '¿Está seguro que desea cancelar la creación del producto?',
+                                                      '¿Está seguro que desea cancelar la edición del producto?',
                                                   maxF: 26,
                                                   minF: 12,
                                                   posicionText:
@@ -233,9 +233,7 @@ class AlertDialogAgregar extends StatelessWidget {
                                                       child: const TextoBotones(
                                                           text: 'Aceptar'),
                                                       op: () {
-                                                        Navigator.pushNamed(
-                                                            context,
-                                                            '/inicioProductos');
+                                                        Navigator.pop(context);
                                                       },
                                                     ),
                                                   ],
@@ -257,7 +255,7 @@ class AlertDialogAgregar extends StatelessWidget {
                             w: tamanioAlert.maxWidth * 0.22,
                             h: tamanioAlert.maxHeight * 0.15,
                             op: () {},
-                            child: const TextoBotones(text: 'Crear'),
+                            child: const TextoBotones(text: 'Editar'),
                           ),
                         ],
                       ),

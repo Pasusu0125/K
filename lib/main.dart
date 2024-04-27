@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kioskito_gerente/pages/Inicio_Sesion.dart';
+import 'package:kioskito_gerente/pages/inicio_sesion.dart';
 import 'package:kioskito_gerente/pages/opciones.dart';
-import 'package:kioskito_gerente/pages/pages_productos/historialPedidos.dart';
-import 'package:kioskito_gerente/pages/pages_productos/informacionPedido.dart';
+import 'package:kioskito_gerente/pages/pages_productos/historial_pedidos.dart';
+import 'package:kioskito_gerente/pages/pages_productos/informacion_pedido.dart';
 import 'package:kioskito_gerente/pages/pages_productos/inicio_pedidos.dart';
 import 'package:kioskito_gerente/pages/pages_productos/inicio_productos.dart';
-import 'package:kioskito_gerente/pages/pages_productos/pedidosListos.dart';
+import 'package:kioskito_gerente/pages/pages_productos/pedidos_listos.dart';
 
 void main() {
   runApp(const MyApp());
