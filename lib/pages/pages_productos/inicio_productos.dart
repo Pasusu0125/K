@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kioskito_gerente/common/paleta.dart';
 import 'package:kioskito_gerente/common/style.dart';
-import 'package:kioskito_gerente/structure/alert_dialog_agregar.dart';
+import 'package:kioskito_gerente/structure/alert_dialog_crear.dart';
 import 'package:kioskito_gerente/structure/botons.dart';
 import 'package:kioskito_gerente/structure/cont_txt.dart';
 import 'package:kioskito_gerente/structure/objects.dart';
@@ -36,8 +36,8 @@ class _InicioProductosState extends State<InicioProductos> {
                   ContenedorTexto(
                     maxL: 1,
                     posicionText: Alignment.center,
-                    w: MediaQuery.of(context).size.width * 0.5,
-                    h: MediaQuery.of(context).size.height * 0.1,
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    heigth: MediaQuery.of(context).size.height * 0.1,
                     text: 'Inventario de Productos',
                     maxF: 140,
                     minF: 20,
@@ -53,8 +53,8 @@ class _InicioProductosState extends State<InicioProductos> {
                 children: [
                   CampoTexto(
                       direccionText: TextAlignVertical.center,
-                      w: MediaQuery.of(context).size.width * 0.5,
-                      h: MediaQuery.of(context).size.height * 0.12,
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      heigth: MediaQuery.of(context).size.height * 0.12,
                       text: 'Buscar  ',
                       icon: IconoTextField(
                         icono: Icons.search_outlined,
@@ -64,9 +64,9 @@ class _InicioProductosState extends State<InicioProductos> {
                     width: MediaQuery.of(context).size.width * .03,
                   ),
                   Btn1(
-                    w: MediaQuery.of(context).size.width * 0.1,
-                    h: MediaQuery.of(context).size.height * 0.06,
-                    op: () {
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    heigth: MediaQuery.of(context).size.height * 0.06,
+                    onTap: () {
                       showDialog(
                         context: context,
                         builder: (context) => const AlertDialogAgregar(),
@@ -147,22 +147,25 @@ class _InicioProductosState extends State<InicioProductos> {
                               alignment: Alignment.center,
                               width: MediaQuery.of(context).size.width * 0.05,
                               child: Circulo(
-                                  r: MediaQuery.of(context).size.width * 0.05,
+                                  radius:
+                                      MediaQuery.of(context).size.width * 0.05,
                                   link:
-                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&w=1080'),
+                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&width=1080'),
                             ),
                           ),
                           DataCell(
                             Container(
                               alignment: Alignment.center,
-                              child: const BtnIconoEditar(),
+                              child: BtnIconoEditar(
+                                onTap: () {},
+                              ),
                             ),
                           ),
                           DataCell(
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEliminar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -170,7 +173,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoDisponibilidad(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -227,16 +230,17 @@ class _InicioProductosState extends State<InicioProductos> {
                               alignment: Alignment.center,
                               width: MediaQuery.of(context).size.width * 0.05,
                               child: Circulo(
-                                  r: MediaQuery.of(context).size.width * 0.05,
+                                  radius:
+                                      MediaQuery.of(context).size.width * 0.05,
                                   link:
-                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&w=1080'),
+                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&width=1080'),
                             ),
                           ),
                           DataCell(
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEditar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -244,7 +248,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEliminar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -252,7 +256,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoDisponibilidad(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -309,16 +313,17 @@ class _InicioProductosState extends State<InicioProductos> {
                               alignment: Alignment.center,
                               width: MediaQuery.of(context).size.width * 0.05,
                               child: Circulo(
-                                  r: MediaQuery.of(context).size.width * 0.05,
+                                  radius:
+                                      MediaQuery.of(context).size.width * 0.05,
                                   link:
-                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&w=1080'),
+                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&width=1080'),
                             ),
                           ),
                           DataCell(
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEditar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -326,7 +331,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEliminar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -334,7 +339,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoDisponibilidad(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -391,16 +396,17 @@ class _InicioProductosState extends State<InicioProductos> {
                               alignment: Alignment.center,
                               width: MediaQuery.of(context).size.width * 0.05,
                               child: Circulo(
-                                  r: MediaQuery.of(context).size.width * 0.05,
+                                  radius:
+                                      MediaQuery.of(context).size.width * 0.05,
                                   link:
-                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&w=1080'),
+                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&width=1080'),
                             ),
                           ),
                           DataCell(
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEditar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -408,7 +414,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEliminar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -416,7 +422,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoDisponibilidad(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -473,16 +479,17 @@ class _InicioProductosState extends State<InicioProductos> {
                               alignment: Alignment.center,
                               width: MediaQuery.of(context).size.width * 0.05,
                               child: Circulo(
-                                  r: MediaQuery.of(context).size.width * 0.05,
+                                  radius:
+                                      MediaQuery.of(context).size.width * 0.05,
                                   link:
-                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&w=1080'),
+                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&width=1080'),
                             ),
                           ),
                           DataCell(
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEditar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -490,7 +497,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEliminar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -498,7 +505,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoDisponibilidad(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -555,16 +562,17 @@ class _InicioProductosState extends State<InicioProductos> {
                               alignment: Alignment.center,
                               width: MediaQuery.of(context).size.width * 0.05,
                               child: Circulo(
-                                  r: MediaQuery.of(context).size.width * 0.05,
+                                  radius:
+                                      MediaQuery.of(context).size.width * 0.05,
                                   link:
-                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&w=1080'),
+                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&width=1080'),
                             ),
                           ),
                           DataCell(
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEditar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -572,7 +580,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEliminar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -580,7 +588,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoDisponibilidad(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -637,16 +645,17 @@ class _InicioProductosState extends State<InicioProductos> {
                               alignment: Alignment.center,
                               width: MediaQuery.of(context).size.width * 0.05,
                               child: Circulo(
-                                  r: MediaQuery.of(context).size.width * 0.05,
+                                  radius:
+                                      MediaQuery.of(context).size.width * 0.05,
                                   link:
-                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&w=1080'),
+                                      'https://images.unsplash.com/photo-1630431341771-1ceb084d6607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8ZnJ5JTIwcG90YXRvZXN8ZW58MHx8fHwxNzEyMjg4NjkwfDA&ixlib=rb-4.0.3&q=80&width=1080'),
                             ),
                           ),
                           DataCell(
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEditar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -654,7 +663,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoEliminar(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -662,7 +671,7 @@ class _InicioProductosState extends State<InicioProductos> {
                             Container(
                               alignment: Alignment.center,
                               child: BtnIconoDisponibilidad(
-                                op: () {},
+                                onTap: () {},
                               ),
                             ),
                           ),
@@ -680,10 +689,10 @@ class _InicioProductosState extends State<InicioProductos> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Btn1(
-                      w: MediaQuery.of(context).size.width * 0.1,
-                      h: MediaQuery.of(context).size.height * 0.05,
+                      width: MediaQuery.of(context).size.width * 0.1,
+                      heigth: MediaQuery.of(context).size.height * 0.05,
                       child: const TextoBotones(text: 'Volver'),
-                      op: () {
+                      onTap: () {
                         Navigator.pushNamed(context, '/opciones');
                       },
                     )

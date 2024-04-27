@@ -46,8 +46,8 @@ class _InicioSesionState extends State<InicioSesion> {
                       maxL: 1,
                       posicionText: Alignment.center,
                       style: temaApp.textTheme.titleLarge,
-                      w: MediaQuery.of(context).size.width * 0.26,
-                      h: MediaQuery.of(context).size.height * 0.2,
+                      width: MediaQuery.of(context).size.width * 0.26,
+                      heigth: MediaQuery.of(context).size.height * 0.2,
                       text: 'Kioskito',
                       maxF: 140,
                       minF: 20)
@@ -55,8 +55,8 @@ class _InicioSesionState extends State<InicioSesion> {
               ),
               CampoTexto(
                 direccionText: TextAlignVertical.center,
-                w: MediaQuery.of(context).size.width * 0.4,
-                h: MediaQuery.of(context).size.height * 0.1,
+                width: MediaQuery.of(context).size.width * 0.4,
+                heigth: MediaQuery.of(context).size.height * 0.1,
                 text: 'Usuario',
                 icon: IconoTextField(
                   color: colorIcono1,
@@ -71,9 +71,9 @@ class _InicioSesionState extends State<InicioSesion> {
                 height: MediaQuery.of(context).size.height * 0.03,
               ),
               Btn1(
-                w: MediaQuery.of(context).size.width * 0.12,
-                h: MediaQuery.of(context).size.height * 0.07,
-                op: () {
+                width: MediaQuery.of(context).size.width * 0.12,
+                heigth: MediaQuery.of(context).size.height * 0.07,
+                onTap: () {
                   Navigator.pushNamed(context, '/opciones');
                 },
                 child: const TextoBotones(text: 'Iniciar Sesión'),

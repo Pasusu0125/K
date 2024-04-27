@@ -30,8 +30,8 @@ class _PedidosListosState extends State<PedidosListos> {
           child: Column(
             children: [
               ContenedorTexto(
-                  w: MediaQuery.of(context).size.width * 0.8,
-                  h: MediaQuery.of(context).size.height * 0.1,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  heigth: MediaQuery.of(context).size.height * 0.1,
                   text: 'Pedidos Listos',
                   style: temaApp.textTheme.titleMedium,
                   maxF: 182,
@@ -74,7 +74,7 @@ class _PedidosListosState extends State<PedidosListos> {
                           Container(
                             alignment: Alignment.center,
                             child: BtnIconoInfo(
-                              op: () {
+                              onTap: () {
                                 Navigator.pushNamed(
                                     context, '/informacionPedidos');
                               },
@@ -94,10 +94,10 @@ class _PedidosListosState extends State<PedidosListos> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Btn1(
-                      w: MediaQuery.of(context).size.width * 0.1,
-                      h: MediaQuery.of(context).size.height * 0.05,
+                      width: MediaQuery.of(context).size.width * 0.1,
+                      heigth: MediaQuery.of(context).size.height * 0.05,
                       child: const TextoBotones(text: 'Volver'),
-                      op: () {
+                      onTap: () {
                         Navigator.pushNamed(context, '/inicioPedidos');
                       },
                     )

@@ -26,8 +26,8 @@ class _InicioPedidosState extends State<InicioPedidos> {
             ContenedorTexto(
               maxL: 1,
               posicionText: Alignment.center,
-              w: MediaQuery.of(context).size.width * 0.5,
-              h: MediaQuery.of(context).size.height * 0.1,
+              width: MediaQuery.of(context).size.width * 0.5,
+              heigth: MediaQuery.of(context).size.height * 0.1,
               text: 'Pedido en Espera',
               maxF: 140,
               minF: 20,
@@ -40,9 +40,9 @@ class _InicioPedidosState extends State<InicioPedidos> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Btn1(
-                    w: MediaQuery.of(context).size.width * 0.1,
-                    h: MediaQuery.of(context).size.height * 0.05,
-                    op: () {
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    heigth: MediaQuery.of(context).size.height * 0.05,
+                    onTap: () {
                       Navigator.pushNamed(context, '/pedidosListos');
                     },
                     child: const TextoBotones(text: 'Pedidos listos'),
@@ -51,9 +51,9 @@ class _InicioPedidosState extends State<InicioPedidos> {
                     width: MediaQuery.of(context).size.width * 0.1,
                   ),
                   Btn1(
-                    w: MediaQuery.of(context).size.width * 0.1,
-                    h: MediaQuery.of(context).size.height * 0.05,
-                    op: () {
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    heigth: MediaQuery.of(context).size.height * 0.05,
+                    onTap: () {
                       Navigator.pushNamed(context, '/historialPedidos');
                     },
                     child: const TextoBotones(text: 'Historial de pedidos'),
@@ -103,7 +103,7 @@ class _InicioPedidosState extends State<InicioPedidos> {
                         Container(
                           alignment: Alignment.center,
                           child: BtnIconoInfo(
-                            op: () {
+                            onTap: () {
                               Navigator.pushNamed(
                                   context, '/informacionPedidos');
                             },
@@ -114,7 +114,7 @@ class _InicioPedidosState extends State<InicioPedidos> {
                         Container(
                           alignment: Alignment.center,
                           child: BtnIconoAprobar(
-                            op: () {},
+                            onTap: () {},
                           ),
                         ),
                       ),
@@ -122,7 +122,7 @@ class _InicioPedidosState extends State<InicioPedidos> {
                         Container(
                           alignment: Alignment.center,
                           child: BtnIconoRechazar(
-                            op: () {},
+                            onTap: () {},
                           ),
                         ),
                       ),
@@ -139,10 +139,10 @@ class _InicioPedidosState extends State<InicioPedidos> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Btn1(
-                    w: MediaQuery.of(context).size.width * 0.1,
-                    h: MediaQuery.of(context).size.height * 0.05,
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    heigth: MediaQuery.of(context).size.height * 0.05,
                     child: const TextoBotones(text: 'Volver'),
-                    op: () {
+                    onTap: () {
                       Navigator.pushNamed(context, '/opciones');
                     },
                   )

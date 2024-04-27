@@ -8,24 +8,24 @@ import 'package:kioskito_gerente/structure/objects.dart';
 //Botón sin icono
 class Btn1 extends StatelessWidget {
   final Widget child;
-  final double w;
-  final double h;
-  final op;
+  final double width;
+  final double heigth;
+  final onTap;
   const Btn1(
       {super.key,
-      this.op,
+      this.onTap,
       required this.child,
-      required this.w,
-      required this.h});
+      required this.width,
+      required this.heigth});
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: w,
-      height: h,
+      minWidth: width,
+      height: heigth,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       color: btn1,
-      onPressed: op,
+      onPressed: onTap,
       child: child,
     );
   }
@@ -34,26 +34,26 @@ class Btn1 extends StatelessWidget {
 //Botón con icono
 class Btn2 extends StatelessWidget {
   final Widget child;
-  final double w;
-  final double h;
-  final op;
+  final double width;
+  final double heigth;
+  final onTap;
   const Btn2(
       {super.key,
       required this.child,
-      required this.w,
-      required this.h,
-      this.op});
+      required this.width,
+      required this.heigth,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: w,
-      height: h,
+      minWidth: width,
+      height: heigth,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
       color: btn2,
-      onPressed: op,
+      onPressed: onTap,
       child: child,
     );
   }
@@ -93,16 +93,16 @@ class IconoBtn extends StatelessWidget {
 
 //Contenedor Cartas Gerente
 class ContenedorBtn extends StatelessWidget {
-  final op;
-  final double h;
-  final double w;
+  final onTap;
+  final double heigth;
+  final double width;
   final String rutaImg;
   final String title;
   const ContenedorBtn({
     super.key,
-    this.op,
-    required this.h,
-    required this.w,
+    this.onTap,
+    required this.heigth,
+    required this.width,
     required this.rutaImg,
     required this.title,
   });
@@ -110,9 +110,9 @@ class ContenedorBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: op,
-      height: MediaQuery.of(context).size.height * h,
-      minWidth: MediaQuery.of(context).size.width * w,
+      onPressed: onTap,
+      height: MediaQuery.of(context).size.height * heigth,
+      minWidth: MediaQuery.of(context).size.width * width,
       color: btn2,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
@@ -123,12 +123,14 @@ class ContenedorBtn extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Circulo(r: MediaQuery.of(context).size.width * 0.04, link: rutaImg),
+            Circulo(
+                radius: MediaQuery.of(context).size.width * 0.04,
+                link: rutaImg),
             ContenedorTexto(
                 maxL: 1,
                 posicionText: Alignment.center,
-                w: MediaQuery.of(context).size.width * 0.1,
-                h: MediaQuery.of(context).size.height * 0.08,
+                width: MediaQuery.of(context).size.width * 0.1,
+                heigth: MediaQuery.of(context).size.height * 0.08,
                 text: title,
                 style: temaApp.textTheme.titleSmall,
                 maxF: 42,

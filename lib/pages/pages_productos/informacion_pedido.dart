@@ -28,8 +28,8 @@ class _InformacionPedidoState extends State<InformacionPedido> {
           child: Column(
             children: [
               ContenedorTexto(
-                w: MediaQuery.of(context).size.width * 0.8,
-                h: MediaQuery.of(context).size.height * 0.12,
+                width: MediaQuery.of(context).size.width * 0.8,
+                heigth: MediaQuery.of(context).size.height * 0.12,
                 text: 'Información de Pedido',
                 maxF: 140,
                 minF: 40,
@@ -99,7 +99,9 @@ class _InformacionPedidoState extends State<InformacionPedido> {
                         ),
                         DataCell(Container(
                           alignment: Alignment.center,
-                          child: const BtnIconoVerComprobante(),
+                          child: BtnIconoVerComprobante(
+                            onTap: () {},
+                          ),
                         )),
                       ],
                     ),
@@ -163,9 +165,9 @@ class _InformacionPedidoState extends State<InformacionPedido> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Btn1(
-                        w: MediaQuery.of(context).size.width * 0.1,
-                        h: MediaQuery.of(context).size.height * 0.05,
-                        op: () {
+                        width: MediaQuery.of(context).size.width * 0.1,
+                        heigth: MediaQuery.of(context).size.height * 0.05,
+                        onTap: () {
                           Navigator.pop(context);
                         },
                         child: const TextoBotones(text: 'Volver')),

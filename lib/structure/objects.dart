@@ -7,22 +7,25 @@ import 'package:kioskito_gerente/structure/botons.dart';
 import 'package:kioskito_gerente/structure/cont_txt.dart';
 
 class Circulo extends StatelessWidget {
-  final double r;
+  final double radius;
   final String link;
-  const Circulo({super.key, required this.r, required this.link});
+  const Circulo({super.key, required this.radius, required this.link});
 
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: r,
+      radius: radius,
       backgroundImage: NetworkImage(link),
     );
   }
 }
 
 class BtnIconoEditar extends StatelessWidget {
-  final op;
-  const BtnIconoEditar({super.key, this.op});
+  final VoidCallback onTap;
+  const BtnIconoEditar({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +45,11 @@ class BtnIconoEditar extends StatelessWidget {
 
 //Botón Eliminar
 class BtnIconoEliminar extends StatelessWidget {
-  final op;
-  const BtnIconoEliminar({super.key, this.op});
+  final VoidCallback onTap;
+  const BtnIconoEliminar({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,15 +61,15 @@ class BtnIconoEliminar extends StatelessWidget {
               color: blanco,
               title: ContenedorTexto(
                   maxL: 1,
-                  w: MediaQuery.of(context).size.width * 0.1,
-                  h: MediaQuery.of(context).size.height * 0.08,
+                  width: MediaQuery.of(context).size.width * 0.25,
+                  heigth: MediaQuery.of(context).size.height * 0.06,
                   text: 'Aviso',
                   style: temaApp.textTheme.titleMedium,
                   maxF: 42,
                   minF: 8,
                   posicionText: Alignment.center),
-              w: 0.1,
-              h: 0.1,
+              width: 0.25,
+              heigth: 0.25,
               child: LayoutBuilder(
                 builder: (context, constraints) {
                   var tamanioAlert = constraints;
@@ -79,8 +85,8 @@ class BtnIconoEliminar extends StatelessWidget {
                         ContenedorTextoGrande(
                             maxL: 3,
                             style: temaApp.textTheme.titleSmall,
-                            w: tamanioAlert.maxWidth * 0.75,
-                            h: tamanioAlert.maxHeight * 0.5,
+                            width: tamanioAlert.maxWidth * 0.75,
+                            heigth: tamanioAlert.maxHeight * 0.5,
                             text:
                                 '¿Está seguro que desea eliminar este producto?',
                             maxF: 26,
@@ -93,10 +99,10 @@ class BtnIconoEliminar extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Btn1(
-                                w: tamanioAlert.maxWidth * 0.1,
-                                h: tamanioAlert.maxHeight * 0.1,
+                                width: tamanioAlert.maxWidth * 0.1,
+                                heigth: tamanioAlert.maxHeight * 0.1,
                                 child: const TextoBotones(text: 'Cancelar'),
-                                op: () {
+                                onTap: () {
                                   Navigator.pop(context);
                                 },
                               ),
@@ -104,10 +110,10 @@ class BtnIconoEliminar extends StatelessWidget {
                                 width: tamanioAlert.maxWidth * 0.1,
                               ),
                               Btn1(
-                                w: tamanioAlert.maxWidth * 0.1,
-                                h: tamanioAlert.maxHeight * 0.1,
+                                width: tamanioAlert.maxWidth * 0.1,
+                                heigth: tamanioAlert.maxHeight * 0.1,
                                 child: const TextoBotones(text: 'Aceptar'),
-                                op: () {
+                                onTap: () {
                                   Navigator.pop(context);
                                 },
                               ),
@@ -130,13 +136,16 @@ class BtnIconoEliminar extends StatelessWidget {
 }
 
 class BtnIconoDisponibilidad extends StatelessWidget {
-  final op;
-  const BtnIconoDisponibilidad({super.key, this.op});
+  final VoidCallback onTap;
+  const BtnIconoDisponibilidad({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: op,
+      onPressed: onTap,
       icon: Icon(
         Icons.battery_alert_sharp,
         color: btnDisponibilidad,
@@ -146,13 +155,16 @@ class BtnIconoDisponibilidad extends StatelessWidget {
 }
 
 class BtnIconoInfo extends StatelessWidget {
-  final op;
-  const BtnIconoInfo({super.key, this.op});
+  final VoidCallback onTap;
+  const BtnIconoInfo({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: op,
+      onPressed: onTap,
       icon: Icon(
         Icons.info,
         color: btnIconoInfo,
@@ -162,13 +174,16 @@ class BtnIconoInfo extends StatelessWidget {
 }
 
 class BtnIconoAprobar extends StatelessWidget {
-  final op;
-  const BtnIconoAprobar({super.key, this.op});
+  final VoidCallback onTap;
+  const BtnIconoAprobar({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: op,
+      onPressed: onTap,
       icon: Icon(
         Icons.check_circle,
         color: btnIconoAprobar,
@@ -178,13 +193,16 @@ class BtnIconoAprobar extends StatelessWidget {
 }
 
 class BtnIconoRechazar extends StatelessWidget {
-  final op;
-  const BtnIconoRechazar({super.key, this.op});
+  final VoidCallback onTap;
+  const BtnIconoRechazar({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: op,
+      onPressed: onTap,
       icon: Icon(
         Icons.highlight_off,
         color: btnIconoRechazar,
@@ -196,8 +214,11 @@ class BtnIconoRechazar extends StatelessWidget {
 //Icono para ver el comprobante de pago
 
 class BtnIconoVerComprobante extends StatelessWidget {
-  final op;
-  const BtnIconoVerComprobante({super.key, this.op});
+  final VoidCallback onTap;
+  const BtnIconoVerComprobante({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -206,12 +227,12 @@ class BtnIconoVerComprobante extends StatelessWidget {
         showDialog(
             context: context,
             builder: (context) => AlertDialogMessage(
-                w: 0.3,
-                h: 0.7,
+                width: 0.3,
+                heigth: 0.7,
                 title: ContenedorTexto(
                     maxL: 1,
-                    w: MediaQuery.of(context).size.width * 0.2,
-                    h: MediaQuery.of(context).size.height * 0.08,
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    heigth: MediaQuery.of(context).size.height * 0.08,
                     text: 'Comprobante de Pago',
                     style: temaApp.textTheme.titleMedium,
                     maxF: 42,
@@ -221,13 +242,28 @@ class BtnIconoVerComprobante extends StatelessWidget {
                 child: LayoutBuilder(
                   builder: (context, constraints) {
                     var tamanioAlert = constraints;
-                    return FittedBox(
-                      fit: BoxFit.contain,
-                      child: Container(
-                        color: Colors.amber,
-                        width: tamanioAlert.maxWidth * 0.7,
-                        height: tamanioAlert.maxHeight * 0.9,
-                      ),
+                    return Column(
+                      children: [
+                        FittedBox(
+                          fit: BoxFit.contain,
+                          child: Container(
+                            color: Colors.amber,
+                            width: tamanioAlert.maxWidth * 0.7,
+                            height: tamanioAlert.maxHeight * 0.8,
+                          ),
+                        ),
+                        SizedBox(
+                          height: tamanioAlert.maxHeight * 0.05,
+                        ),
+                        Btn1(
+                          width: tamanioAlert.maxWidth * 0.2,
+                          heigth: tamanioAlert.maxHeight * 0.1,
+                          child: const TextoBotones(text: 'Volver'),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        )
+                      ],
                     );
                   },
                 )));

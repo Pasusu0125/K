@@ -15,16 +15,16 @@ class AlertDialogEditar extends StatelessWidget {
       title: ContenedorTexto(
           maxL: 1,
           posicionText: Alignment.center,
-          w: MediaQuery.of(context).size.width * 0.4,
-          h: MediaQuery.of(context).size.height * 0.07,
+          width: MediaQuery.of(context).size.width * 0.45,
+          heigth: MediaQuery.of(context).size.height * 0.07,
           text: 'Editar Producto',
           style: temaApp.textTheme.titleMedium,
           maxF: 80,
           minF: 12),
       backgroundColor: blanco,
       content: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.4,
-        height: MediaQuery.of(context).size.height * 0.35,
+        width: MediaQuery.of(context).size.width * 0.45,
+        height: MediaQuery.of(context).size.height * 0.4,
         child: LayoutBuilder(
           builder: (context, constraints) {
             var tamanioAlert = constraints;
@@ -42,8 +42,8 @@ class AlertDialogEditar extends StatelessWidget {
                         ContenedorTexto(
                             maxL: 1,
                             posicionText: Alignment.bottomLeft,
-                            w: tamanioAlert.maxWidth * 0.2,
-                            h: tamanioAlert.maxHeight * 0.08,
+                            width: tamanioAlert.maxWidth * 0.2,
+                            heigth: tamanioAlert.maxHeight * 0.08,
                             text: 'Nombre',
                             style: temaApp.textTheme.titleSmall,
                             maxF: 32,
@@ -53,8 +53,8 @@ class AlertDialogEditar extends StatelessWidget {
                         ),
                         CampoTexto(
                           direccionText: TextAlignVertical.bottom,
-                          w: tamanioAlert.maxWidth * 0.55,
-                          h: tamanioAlert.maxHeight * 0.12,
+                          width: tamanioAlert.maxWidth * 0.55,
+                          heigth: tamanioAlert.maxHeight * 0.12,
                           text: 'Nombre',
                           icon: const Icon(null),
                         )
@@ -68,8 +68,8 @@ class AlertDialogEditar extends StatelessWidget {
                         ContenedorTexto(
                             maxL: 1,
                             posicionText: Alignment.bottomLeft,
-                            w: tamanioAlert.maxWidth * 0.23,
-                            h: tamanioAlert.maxHeight * 0.08,
+                            width: tamanioAlert.maxWidth * 0.23,
+                            heigth: tamanioAlert.maxHeight * 0.08,
                             text: 'Descripción',
                             style: temaApp.textTheme.titleSmall,
                             maxF: 32,
@@ -79,8 +79,8 @@ class AlertDialogEditar extends StatelessWidget {
                         ),
                         CampoTexto(
                           direccionText: TextAlignVertical.center,
-                          w: tamanioAlert.maxWidth * 0.55,
-                          h: tamanioAlert.maxHeight * 0.15,
+                          width: tamanioAlert.maxWidth * 0.55,
+                          heigth: tamanioAlert.maxHeight * 0.15,
                           text: 'Descripción',
                           icon: const Icon(null),
                         )
@@ -94,8 +94,8 @@ class AlertDialogEditar extends StatelessWidget {
                         ContenedorTexto(
                             maxL: 1,
                             posicionText: Alignment.bottomLeft,
-                            w: tamanioAlert.maxWidth * 0.2,
-                            h: tamanioAlert.maxHeight * 0.08,
+                            width: tamanioAlert.maxWidth * 0.2,
+                            heigth: tamanioAlert.maxHeight * 0.08,
                             text: 'Precio',
                             style: temaApp.textTheme.titleSmall,
                             maxF: 32,
@@ -105,8 +105,8 @@ class AlertDialogEditar extends StatelessWidget {
                         ),
                         CampoTexto(
                           direccionText: TextAlignVertical.bottom,
-                          w: tamanioAlert.maxWidth * 0.55,
-                          h: tamanioAlert.maxHeight * 0.12,
+                          width: tamanioAlert.maxWidth * 0.55,
+                          heigth: tamanioAlert.maxHeight * 0.12,
                           text: 'Precio',
                           icon: const Icon(null),
                         )
@@ -120,8 +120,8 @@ class AlertDialogEditar extends StatelessWidget {
                         ContenedorTexto(
                             maxL: 1,
                             posicionText: Alignment.bottomLeft,
-                            w: tamanioAlert.maxWidth * 0.2,
-                            h: tamanioAlert.maxHeight * 0.08,
+                            width: tamanioAlert.maxWidth * 0.2,
+                            heigth: tamanioAlert.maxHeight * 0.08,
                             text: 'Foto',
                             style: temaApp.textTheme.titleSmall,
                             maxF: 32,
@@ -130,15 +130,15 @@ class AlertDialogEditar extends StatelessWidget {
                           width: tamanioAlert.maxWidth * 0.1,
                         ),
                         Btn2(
-                          w: tamanioAlert.maxWidth * 0.25,
-                          h: tamanioAlert.maxHeight * 0.15,
+                          width: tamanioAlert.maxWidth * 0.25,
+                          heigth: tamanioAlert.maxHeight * 0.15,
                           child: Row(
                             children: [
                               IconoBtn(icno: Icons.upload_sharp, color: blanco),
                               const TextoBotones(text: 'Subir Imagen')
                             ],
                           ),
-                          op: () {},
+                          onTap: () {},
                         ),
                       ],
                     ),
@@ -149,26 +149,28 @@ class AlertDialogEditar extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Btn1(
-                            w: tamanioAlert.maxWidth * 0.22,
-                            h: tamanioAlert.maxHeight * 0.15,
-                            op: () {
+                            width: tamanioAlert.maxWidth * 0.22,
+                            heigth: tamanioAlert.maxHeight * 0.15,
+                            onTap: () {
                               showDialog(
                                 context: context,
                                 builder: (context) => AlertDialogMessage(
                                     color: fondo,
                                     title: ContenedorTexto(
                                         maxL: 1,
-                                        w: MediaQuery.of(context).size.width *
-                                            0.2,
-                                        h: MediaQuery.of(context).size.height *
-                                            0.08,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
+                                        heigth:
+                                            MediaQuery.of(context).size.height *
+                                                0.08,
                                         text: 'Aviso',
                                         style: temaApp.textTheme.titleMedium,
                                         maxF: 42,
                                         minF: 8,
                                         posicionText: Alignment.center),
-                                    w: 0.2,
-                                    h: 0.2,
+                                    width: 0.25,
+                                    heigth: 0.25,
                                     child: LayoutBuilder(
                                       builder: (context, constraints) {
                                         var tamanioAlert = constraints;
@@ -188,10 +190,11 @@ class AlertDialogEditar extends StatelessWidget {
                                                   maxL: 3,
                                                   style: temaApp
                                                       .textTheme.titleSmall,
-                                                  w: tamanioAlert.maxWidth *
+                                                  width: tamanioAlert.maxWidth *
                                                       0.75,
-                                                  h: tamanioAlert.maxHeight *
-                                                      0.5,
+                                                  heigth:
+                                                      tamanioAlert.maxHeight *
+                                                          0.5,
                                                   text:
                                                       '¿Está seguro que desea cancelar la edición del producto?',
                                                   maxF: 26,
@@ -208,14 +211,15 @@ class AlertDialogEditar extends StatelessWidget {
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     Btn1(
-                                                      w: tamanioAlert.maxWidth *
+                                                      width: tamanioAlert
+                                                              .maxWidth *
                                                           0.1,
-                                                      h: tamanioAlert
+                                                      heigth: tamanioAlert
                                                               .maxHeight *
                                                           0.1,
                                                       child: const TextoBotones(
                                                           text: 'Cancelar'),
-                                                      op: () {
+                                                      onTap: () {
                                                         Navigator.pop(context);
                                                       },
                                                     ),
@@ -225,14 +229,15 @@ class AlertDialogEditar extends StatelessWidget {
                                                           0.1,
                                                     ),
                                                     Btn1(
-                                                      w: tamanioAlert.maxWidth *
+                                                      width: tamanioAlert
+                                                              .maxWidth *
                                                           0.1,
-                                                      h: tamanioAlert
+                                                      heigth: tamanioAlert
                                                               .maxHeight *
                                                           0.1,
                                                       child: const TextoBotones(
                                                           text: 'Aceptar'),
-                                                      op: () {
+                                                      onTap: () {
                                                         Navigator.pop(context);
                                                       },
                                                     ),
@@ -252,9 +257,9 @@ class AlertDialogEditar extends StatelessWidget {
                             width: tamanioAlert.maxWidth * 0.05,
                           ),
                           Btn1(
-                            w: tamanioAlert.maxWidth * 0.22,
-                            h: tamanioAlert.maxHeight * 0.15,
-                            op: () {},
+                            width: tamanioAlert.maxWidth * 0.22,
+                            heigth: tamanioAlert.maxHeight * 0.15,
+                            onTap: () {},
                             child: const TextoBotones(text: 'Editar'),
                           ),
                         ],

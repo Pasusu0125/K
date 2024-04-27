@@ -28,8 +28,8 @@ class _OpcionesState extends State<Opciones> {
                 ContenedorTexto(
                     maxL: 1,
                     posicionText: Alignment.center,
-                    w: MediaQuery.of(context).size.width * 0.5,
-                    h: MediaQuery.of(context).size.height * 0.12,
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    heigth: MediaQuery.of(context).size.height * 0.12,
                     text: 'BIENVENIDO',
                     style: temaApp.textTheme.titleMedium,
                     maxF: 140,
@@ -41,12 +41,12 @@ class _OpcionesState extends State<Opciones> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ContenedorBtn(
-                      h: 0.3,
-                      w: 0.2,
+                      heigth: 0.3,
+                      width: 0.2,
                       rutaImg:
-                          'https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxmb29kfGVufDB8fHx8MTcxMjMyMzg0Nnww&ixlib=rb-4.0.3&q=80&w=1080 ',
+                          'https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxmb29kfGVufDB8fHx8MTcxMjMyMzg0Nnww&ixlib=rb-4.0.3&q=80&width=1080 ',
                       title: 'Productos',
-                      op: () {
+                      onTap: () {
                         Navigator.pushNamed(context, '/inicioProductos');
                       },
                     ),
@@ -54,12 +54,12 @@ class _OpcionesState extends State<Opciones> {
                       width: MediaQuery.of(context).size.width * 0.05,
                     ),
                     ContenedorBtn(
-                      h: 0.3,
-                      w: 0.2,
+                      heigth: 0.3,
+                      width: 0.2,
                       rutaImg:
-                          'https://images.unsplash.com/photo-1588675646184-f5b0b0b0b2de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxvcmRlcnMlN0R8ZW58MHx8fHwxNzEyMzU3MzUzfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                          'https://images.unsplash.com/photo-1588675646184-f5b0b0b0b2de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxvcmRlcnMlN0R8ZW58MHx8fHwxNzEyMzU3MzUzfDA&ixlib=rb-4.0.3&q=80&width=1080',
                       title: 'Pedidos',
-                      op: () {
+                      onTap: () {
                         Navigator.pushNamed(context, '/inicioPedidos');
                       },
                     )
